@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bcrypt auth</title>
+</head>
+<body>
+    <div class="container">
+        <form id="form"action="http://127.0.0.1:8080/register" method="post">
+            <h1>AUTHENTICATION</h1>
+            <label for="email">email</label>
+            <input required type="email" placeholder="email@example.com" name="email" id="">
+            <label for="password">password</label>
+            <input required type="password" placeholder="........" name="pass" id="">
+            <span>
+                <input type="submit" id="register" value="Register">
+                <input type="submit" id="login"value="Login">
+            </span>
+            <h5>or</h5>
+            <div class="google-btn">
+                <div class="google-icon-wrapper">
+                  <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                </div>
+                <p unselectable="on" class="btn-text"><b>Sign in with Google</b></p>
+            </div>
+        </form>
+    </div>
+</body>
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+    .container{
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8f8f8;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        flex: .3;
+        height: fit-content;
+        padding: 20px 30px;
+        background-color: #fff;
+    }
+    h1{
+        color: rgba(0, 0, 0, .8);
+        font-size: 1.3em;
+        text-align: center;
+        margin: 20px 0;
+    }
+    h5{
+        text-align: center;
+        color: rgba(0, 0, 0, .8);
+        margin-bottom: 20px;
+    }
+    label{
+        font-size: .85em;
+        color: rgba(0, 0, 0, .8);
+        margin-bottom: 8px;
+    }
+    input{
+        margin-bottom: 20px;
+        height: 40px;
+        padding: 10px;
+    }
+    span{
+        display: flex;
+    }
+    span input{
+        flex: 1;
+        height: 50px;
+        border-radius: 0;
+        border: 0;
+        transition-duration: 0.2s;
+    }
+    #register{
+        background-color: beige;
+    }
+    #login{
+        background-color: black;
+        color: white;
+    }
+    span input:hover{
+        opacity: .8;
+        cursor: pointer;
+    }
+    .google-btn{
+        margin: auto;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        padding: 10px;
+        border: solid;
+        border-radius: 5px;
+        border-width: 1px;
+        width: 250px;
+        background-color: rgba(0, 0, 0, 0);
+        transition-duration: 0.2s;
+        outline: none;
+        
+    }
+    .google-btn:hover{
+        background-color: rgba(0, 0, 0, .05);
+        box-shadow: 5px 5px;
+        cursor: pointer;
+    }
+    .google-btn:active{
+        background-color: rgba(0, 0, 0, .5);
+    }
+    .google-icon-wrapper{
+        flex: .3;
+        pointer-events: none;
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+    }
+    .btn-text b{
+        height: fit-content;
+        margin-left: 20px;
+        pointer-events: none;
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+    }
+</style>
+<script>
+    document.getElementById("login").addEventListener("click", function(e){
+        e.preventDefault();
+        document.getElementById('form').action = "http://127.0.0.1:8080/login";
+        document.getElementById('form').submit();
+    });
+</script>
+</html>
