@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="container">
-        <form id="form"action="http://127.0.0.1:8080/register" method="post">
+        <form id="form"action="http://127.0.0.1:80/register" method="post">
             <h1>AUTHENTICATION</h1>
             <label for="email">email</label>
             <input required type="email" placeholder="email@example.com" name="email" id="">
@@ -136,7 +136,7 @@
 <script>
     document.getElementById("login").addEventListener("click", function(e){
         e.preventDefault();
-        document.getElementById('form').action = "http://127.0.0.1:8080/login";
+        document.getElementById('form').action = "http://127.0.0.1:80/login";
         document.getElementById('form').submit();
     });
 </script>

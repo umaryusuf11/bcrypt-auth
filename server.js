@@ -54,7 +54,7 @@ app.post('/login', (req,res)=>{
     }
 });
 
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 80;
 app.listen(PORT, ()=>{
     console.log(`Server Listening on port: ${PORT}`)
 })
